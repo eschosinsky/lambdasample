@@ -10,7 +10,7 @@ exports.handler = async (event) => {
     headers: {
       "Content-Type": "text/plain",
     },
-    body: "Hallo meine Welt",
+    body: "Hallo meine runde Welt",
   };
   
   return response;

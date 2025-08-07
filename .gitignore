@@ -1,0 +1,58 @@
+# -----------------------------------------------------------------------------
+# Ignorar archivos y directorios generados por Terraform
+# -----------------------------------------------------------------------------
+# El directorio donde Terraform guarda su estado local y otros archivos
+.terraform/
+
+# El archivo de bloqueo del proveedor, que es regenerado por `terraform init`
+.terraform.lock.hcl
+
+# El archivo que guarda el estado de la infraestructura. Nunca debe subirse a Git.
+# En su lugar, usa un backend remoto (como S3) para guardar el estado.
+terraform.tfstate
+terraform.tfstate.backup
+
+# Archivos de plan, que pueden contener información sensible y son temporales
+*.tfplan
+*.tfplan.binary
+
+# Archivos crash.log generados en caso de un fallo de Terraform
+crash.log
+crash.*.log
+
+# Archivos de caché del CLI, que solo son relevantes para tu máquina local
+.terraform.d/
+
+# -----------------------------------------------------------------------------
+# Ignorar archivos y directorios de Visual Studio Code
+# -----------------------------------------------------------------------------
+# El directorio de configuración de VS Code.
+.vscode/
+
+# Archivos de la extensión de Terraform para VS Code, como el caché y logs.
+.vscode-terraform/
+
+# Ignorar archivos de registro de IntelliSense, si los hay
+*.code-workspace.log
+
+# -----------------------------------------------------------------------------
+# Ignorar otros archivos comunes y temporales
+# -----------------------------------------------------------------------------
+# Archivos de logs de la aplicación
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+index.js
+function.zip
+# Directorios de dependencias y builds (si aplica)
+node_modules/
+dist/
+build/
+
+# Archivos temporales de sistemas operativos
+.DS_Store
+.env
+.env.local

@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "Instalando dependencias..."
+      - npm install
+
+  pre_build:
+    commands:
+      - echo "Preparando entorno..."
+
+  build:
+    commands:
+      - echo "Empaquetando Lambda..."
+      - mkdir -p build
+      - cp index.js build/
+      - cp package.json build/
+      - cp -R node_modules build/
+
+  post_build:
+    commands:
+      - echo "Build completado. Empaquetando artefacto..."
+
+artifacts:
+  files:
+    - build/**/*
+  discard-paths: no
